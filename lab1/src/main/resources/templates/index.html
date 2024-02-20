@@ -4,7 +4,7 @@
       lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello Spring!</title>
+    <title th:text="${pageTitle}"></title>
 </head>
 <body>
 <h1 th:text="${pageTitle}"></h1>
@@ -15,5 +15,34 @@
             </li>
         </ul>
     </div>
+    <div th:text="${user.getName()}"></div>
+    <div th:text="${films[2001]}"></div>
+    <div th:text="${films[2002]}"></div>
+    <div th:text="${films[2003]}"></div>
+
+    <div th:text="#{dashboard.title}"></div>
+
+    <div th:object="${computer}">
+        <p th:text="*{Cpu}"></p>
+        <p th:text="*{Gpu}"></p>
+        <p th:text="*{Disk}"></p>
+        <p th:text="*{Memory}"></p>
+    </div>
+
+    <div>
+        <a th:href="@{https://www.google.com/search(q=${search})}">search</a>
+    </div>
+
+    <div th:id="|container-${search}|"></div>
+
+    <div>
+        <span>ChatGPT [[${expression}]] helped me</span>
+    </div>
+
+    <div th:text="${game}">the witcher 3</div>
+
+    <div th:if="${computer.Memory} > 8">dont need to update</div>
+    <div th:unless="${computer.Memory} > 8">need to update</div>
+
 </body>
 </html>
