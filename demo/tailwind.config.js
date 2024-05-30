@@ -12,6 +12,6 @@ module.exports = {
       }
     },
   },
-  plugins: [require('@tailwindcss/container-queries'),require('daisyui'),require('@tailwindcss/forms'),require('@tailwindcss/typography')],
+  plugins: [require('flowbite/plugin'),require('@tailwindcss/container-queries'),require('daisyui'),require('@tailwindcss/forms'),require('@tailwindcss/typography')],
 }
 
